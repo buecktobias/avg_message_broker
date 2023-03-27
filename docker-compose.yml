@@ -17,3 +17,15 @@ services:
         reservations:
           cpus: '1'
           memory: 2G
+  java_hardware_order:
+    container_name: java_hardware_order
+    build: ./java_hardware_order/
+  java_smartphone_app:
+    container_name: java_smartphone_app
+    build: ./java_smartphone_app
+  javascript_software_order:
+    container_name: javascript_software_order
+    build: ./javascript_software_order
+  javascript_website:
+    container_name: javascript_website
+    build: ./javascript_website
