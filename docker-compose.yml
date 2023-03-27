@@ -1,0 +1,19 @@
+version: '3.9'
+services:
+  activemq:
+    container_name: activemq
+    image: rmohr/activemq:latest
+    ports:
+      - "8161:8161"
+    volumes:
+      - ./activemq:/opt/apache-activemq-5.15.6
+    environment:
+      - ACTIVEMQ_OPTS=-Xms1024m -Xmx2048m
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 4G
+        reservations:
+          cpus: '1'
+          memory: 2G
