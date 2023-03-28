@@ -6,6 +6,11 @@ public class Main {
     private static final String hardwareBestellung2 = "sendeHardwareBestellung2";
     private static final String softwareBestellung1 = "sendeSoftwareBestellung1";
     private static final String softwareBestellung2 = "sendeSoftwareBestellung2";
+    private static final String dockerContainer = "startDockerContainer";
+    public static void runDocker(){
+        while(true){}
+    }
+    
     public static void main(String[] args) throws IOException {
         HttpRequestSender sender = new HttpRequestSender();
         String arg = args[0];
@@ -16,6 +21,7 @@ public class Main {
             case hardwareBestellung2 -> sender.hardwareBestellung("2");
             case softwareBestellung1 -> sender.softwareBestellung("1");
             case softwareBestellung2 -> sender.softwareBestellung("2");
+            case dockerContainer -> Main.runDocker();
             default -> System.out.println("Fehler, bitte geben Sie eine Bestellung an.");
         }
     }

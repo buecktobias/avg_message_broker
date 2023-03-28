@@ -9,6 +9,8 @@ services:
       - ./activemq:/opt/apache-activemq-5.15.6
     environment:
       - ACTIVEMQ_OPTS=-Xms2048m -Xmx3048m
+    networks:
+      - mynetwork
     deploy:
       resources:
         limits:
@@ -20,12 +22,22 @@ services:
   java_hardware_order:
     container_name: java_hardware_order
     build: ./java_hardware_order/
+    networks:
+      - mynetwork
   java_smartphone_app:
     container_name: java_smartphone_app
     build: ./java_smartphone_app
+    networks:
+      - mynetwork
   javascript_software_order:
     container_name: javascript_software_order
     build: ./javascript_software_order
+    networks:
+      - mynetwork
   javascript_website:
     container_name: javascript_website
     build: ./javascript_website
+    networks:
+      - mynetwork
+networks:
+  mynetwork:

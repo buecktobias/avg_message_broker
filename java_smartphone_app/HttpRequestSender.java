@@ -39,7 +39,7 @@ public class HttpRequestSender {
         String hardwareBestellung = "BestellungsID: 00"+ id + "\nDatum: " + formatiertesDatum + "\n" +
                 "Stückzahl: 3\nArtikelID: 005";
 
-        String hardwareOrdersUrl = "http://localhost:8161/api/message/HardwareOrders?type=queue";
+        String hardwareOrdersUrl = "http://activemq:8161/api/message/HardwareOrders?type=queue";
         RequestSender(hardwareBestellung, hardwareOrdersUrl);
     }
 
@@ -47,7 +47,7 @@ public class HttpRequestSender {
         String softwareBestellung = "BestellungsID: 00" + id + "\nDatum: " + formatiertesDatum + "\n" +
                 "Stückzahl: 1\nArtikelID: 005";
 
-        String softwareOrdersUrl = "http://localhost:8161/api/message/SoftwareOrders?type=queue";
+        String softwareOrdersUrl = "http://activemq:8161/api/message/SoftwareOrders?type=queue";
         RequestSender(softwareBestellung, softwareOrdersUrl);
     }
 }

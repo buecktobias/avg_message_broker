@@ -6,4 +6,4 @@ COPY . .
 
 RUN javac Main.java
 
-CMD ["java", "Main"]
+CMD ["java", "Main", "startDockerContainer"]

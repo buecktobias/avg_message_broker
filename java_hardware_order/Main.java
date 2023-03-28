@@ -3,7 +3,7 @@ public class Main{
         while(true){
             System.out.println("hardware order running!");
             try {
-                Thread.sleep(1000); // sleep for 1 second
+                Thread.sleep(30_000); // sleep for 1 second
             } catch (InterruptedException e) {
                 // handle the exception
             }
