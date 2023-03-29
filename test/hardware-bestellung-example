@@ -1,0 +1,4 @@
+BestellungsID: Integer
+Datum: YYYY-MM-DDThh:mm:ss
+Stückzahl: Integer
+ArtikelID: Integer

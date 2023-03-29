@@ -560,3 +560,128 @@ org.springframework.web.util.NestedServletException: Request processing failed; 
 2023-03-28 14:12:33,567 | INFO  | Initializing Spring FrameworkServlet 'dispatcher' | /admin | main
 2023-03-28 14:12:36,664 | INFO  | No Spring WebApplicationInitializer types detected on classpath | /api | main
 2023-03-28 14:12:37,610 | INFO  | jolokia-agent: Using policy access restrictor classpath:/jolokia-access.xml | /api | main
+2023-03-28 14:13:39,031 | INFO  | Connector vm://localhost started | org.apache.activemq.broker.TransportConnector | qtp867288517-43
+2023-03-28 17:07:15,559 | INFO  | Connector vm://localhost stopped | org.apache.activemq.broker.TransportConnector | org.eclipse.jetty.server.session.HashSessionManager@10567255Timer
+2023-03-28 17:33:48,097 | WARN  |  | org.eclipse.jetty.servlet.ServletHandler | qtp867288517-118
+org.springframework.web.util.NestedServletException: Request processing failed; nested exception is java.lang.IllegalArgumentException: No JMSDestination parameter specified
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:982)[spring-webmvc-4.3.18.RELEASE.jar:4.3.18.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)[spring-webmvc-4.3.18.RELEASE.jar:4.3.18.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:648)[tomcat-servlet-api-8.0.53.jar:]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)[spring-webmvc-4.3.18.RELEASE.jar:4.3.18.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)[tomcat-servlet-api-8.0.53.jar:]
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:812)[jetty-all-9.2.25.v20180606.jar:9.2.25.v20180606]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1669)[jetty-all-9.2.25.v20180606.jar:9.2.25.v20180606]
+	at org.eclipse.jetty.websocket.server.WebSocketUpgradeFilter.doFilter(WebSocketUpgradeFilter.java:201)[jetty-all-9.2.25.v20180606.jar:9.2.25.v20180606]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652)[jetty-all-9.2.25.v20180606.jar:9.2.25.v20180606]
+	at org.apache.activemq.web.AuditFilter.doFilter(AuditFilter.java:59)[activemq-web-5.15.6.jar:5.15.6]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652)[jetty-all-9.2.25.v20180606.jar:9.2.25.v20180606]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)[spring-web-4.3.18.RELEASE.jar:4.3.18.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)[spring-web-4.3.18.RELEASE.jar:4.3.18.RELEASE]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652)[jetty-all-9.2.25.v20180606.jar:9.2.25.v20180606]
+	at org.apache.activemq.web.filter.ApplicationContextFilter.doFilter(ApplicationContextFilter.java:102)[file:/opt/apache-activemq-5.15.6/webapps/admin/WEB-INF/classes/:]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652)[jetty-all-9.2.25.v20180606.jar:9.2.25.v20180606]
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:585)[jetty-all-9.2.25.v20180606.jar:9.2.25.v20180606]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)[jetty-all-9.2.25.v20180606.jar:9.2.25.v20180606]
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:542)[jetty-all-9.2.25.v20180606.jar:9.2.25.v20180606]
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:223)[jetty-all-9.2.25.v20180606.jar:9.2.25.v20180606]
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1127)[jetty-all-9.2.25.v20180606.jar:9.2.25.v20180606]
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)[jetty-all-9.2.25.v20180606.jar:9.2.25.v20180606]
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)[jetty-all-9.2.25.v20180606.jar:9.2.25.v20180606]
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1061)[jetty-all-9.2.25.v20180606.jar:9.2.25.v20180606]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)[jetty-all-9.2.25.v20180606.jar:9.2.25.v20180606]
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:110)[jetty-all-9.2.25.v20180606.jar:9.2.25.v20180606]
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:542)[jetty-all-9.2.25.v20180606.jar:9.2.25.v20180606]
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:110)[jetty-all-9.2.25.v20180606.jar:9.2.25.v20180606]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97)[jetty-all-9.2.25.v20180606.jar:9.2.25.v20180606]
+	at org.eclipse.jetty.server.Server.handle(Server.java:499)[jetty-all-9.2.25.v20180606.jar:9.2.25.v20180606]
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:311)[jetty-all-9.2.25.v20180606.jar:9.2.25.v20180606]
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:258)[jetty-all-9.2.25.v20180606.jar:9.2.25.v20180606]
+	at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:544)[jetty-all-9.2.25.v20180606.jar:9.2.25.v20180606]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:635)[jetty-all-9.2.25.v20180606.jar:9.2.25.v20180606]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:555)[jetty-all-9.2.25.v20180606.jar:9.2.25.v20180606]
+	at java.lang.Thread.run(Thread.java:748)[:1.8.0_181]
+2023-03-28 17:33:54,925 | WARN  |  | org.eclipse.jetty.servlet.ServletHandler | qtp867288517-118
+org.springframework.web.util.NestedServletException: Request processing failed; nested exception is java.lang.IllegalArgumentException: No JMSDestination parameter specified
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:982)[spring-webmvc-4.3.18.RELEASE.jar:4.3.18.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)[spring-webmvc-4.3.18.RELEASE.jar:4.3.18.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:648)[tomcat-servlet-api-8.0.53.jar:]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)[spring-webmvc-4.3.18.RELEASE.jar:4.3.18.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)[tomcat-servlet-api-8.0.53.jar:]
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:812)[jetty-all-9.2.25.v20180606.jar:9.2.25.v20180606]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1669)[jetty-all-9.2.25.v20180606.jar:9.2.25.v20180606]
+	at org.eclipse.jetty.websocket.server.WebSocketUpgradeFilter.doFilter(WebSocketUpgradeFilter.java:201)[jetty-all-9.2.25.v20180606.jar:9.2.25.v20180606]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652)[jetty-all-9.2.25.v20180606.jar:9.2.25.v20180606]
+	at org.apache.activemq.web.AuditFilter.doFilter(AuditFilter.java:59)[activemq-web-5.15.6.jar:5.15.6]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652)[jetty-all-9.2.25.v20180606.jar:9.2.25.v20180606]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)[spring-web-4.3.18.RELEASE.jar:4.3.18.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)[spring-web-4.3.18.RELEASE.jar:4.3.18.RELEASE]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652)[jetty-all-9.2.25.v20180606.jar:9.2.25.v20180606]
+	at org.apache.activemq.web.filter.ApplicationContextFilter.doFilter(ApplicationContextFilter.java:102)[file:/opt/apache-activemq-5.15.6/webapps/admin/WEB-INF/classes/:]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652)[jetty-all-9.2.25.v20180606.jar:9.2.25.v20180606]
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:585)[jetty-all-9.2.25.v20180606.jar:9.2.25.v20180606]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)[jetty-all-9.2.25.v20180606.jar:9.2.25.v20180606]
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:542)[jetty-all-9.2.25.v20180606.jar:9.2.25.v20180606]
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:223)[jetty-all-9.2.25.v20180606.jar:9.2.25.v20180606]
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1127)[jetty-all-9.2.25.v20180606.jar:9.2.25.v20180606]
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)[jetty-all-9.2.25.v20180606.jar:9.2.25.v20180606]
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)[jetty-all-9.2.25.v20180606.jar:9.2.25.v20180606]
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1061)[jetty-all-9.2.25.v20180606.jar:9.2.25.v20180606]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)[jetty-all-9.2.25.v20180606.jar:9.2.25.v20180606]
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:110)[jetty-all-9.2.25.v20180606.jar:9.2.25.v20180606]
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:542)[jetty-all-9.2.25.v20180606.jar:9.2.25.v20180606]
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:110)[jetty-all-9.2.25.v20180606.jar:9.2.25.v20180606]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97)[jetty-all-9.2.25.v20180606.jar:9.2.25.v20180606]
+	at org.eclipse.jetty.server.Server.handle(Server.java:499)[jetty-all-9.2.25.v20180606.jar:9.2.25.v20180606]
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:311)[jetty-all-9.2.25.v20180606.jar:9.2.25.v20180606]
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:258)[jetty-all-9.2.25.v20180606.jar:9.2.25.v20180606]
+	at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:544)[jetty-all-9.2.25.v20180606.jar:9.2.25.v20180606]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:635)[jetty-all-9.2.25.v20180606.jar:9.2.25.v20180606]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:555)[jetty-all-9.2.25.v20180606.jar:9.2.25.v20180606]
+	at java.lang.Thread.run(Thread.java:748)[:1.8.0_181]
+2023-03-29 08:46:03,009 | INFO  | Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@6e06451e: startup date [Wed Mar 29 08:46:02 UTC 2023]; root of context hierarchy | org.apache.activemq.xbean.XBeanBrokerFactory$1 | main
+2023-03-29 08:46:11,034 | INFO  | Using Persistence Adapter: KahaDBPersistenceAdapter[/opt/activemq/data/kahadb] | org.apache.activemq.broker.BrokerService | main
+2023-03-29 08:46:11,781 | INFO  | KahaDB is version 6 | org.apache.activemq.store.kahadb.MessageDatabase | main
+2023-03-29 08:46:12,125 | INFO  | PListStore:[/opt/activemq/data/localhost/tmp_storage] started | org.apache.activemq.store.kahadb.plist.PListStoreImpl | main
+2023-03-29 08:46:12,796 | INFO  | Apache ActiveMQ 5.15.6 (localhost, ID:e6fd426d9f26-39057-1680079572259-0:1) is starting | org.apache.activemq.broker.BrokerService | main
+2023-03-29 08:46:13,398 | INFO  | Listening for connections at: tcp://e6fd426d9f26:61616?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.TransportServerThreadSupport | main
+2023-03-29 08:46:13,406 | INFO  | Connector openwire started | org.apache.activemq.broker.TransportConnector | main
+2023-03-29 08:46:13,445 | INFO  | Listening for connections at: amqp://e6fd426d9f26:5672?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.TransportServerThreadSupport | main
+2023-03-29 08:46:13,455 | INFO  | Connector amqp started | org.apache.activemq.broker.TransportConnector | main
+2023-03-29 08:46:13,493 | INFO  | Listening for connections at: stomp://e6fd426d9f26:61613?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.TransportServerThreadSupport | main
+2023-03-29 08:46:13,502 | INFO  | Connector stomp started | org.apache.activemq.broker.TransportConnector | main
+2023-03-29 08:46:13,540 | INFO  | Listening for connections at: mqtt://e6fd426d9f26:1883?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.TransportServerThreadSupport | main
+2023-03-29 08:46:13,549 | INFO  | Connector mqtt started | org.apache.activemq.broker.TransportConnector | main
+2023-03-29 08:46:14,824 | WARN  | ServletContext@o.e.j.s.ServletContextHandler@49ff7d8c{/,null,STARTING} has uncovered http methods for path: / | org.eclipse.jetty.security.SecurityHandler | main
+2023-03-29 08:46:15,246 | INFO  | Listening for connections at ws://e6fd426d9f26:61614?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.ws.WSTransportServer | main
+2023-03-29 08:46:15,256 | INFO  | Connector ws started | org.apache.activemq.broker.TransportConnector | main
+2023-03-29 08:46:15,268 | INFO  | Apache ActiveMQ 5.15.6 (localhost, ID:e6fd426d9f26-39057-1680079572259-0:1) started | org.apache.activemq.broker.BrokerService | main
+2023-03-29 08:46:15,280 | INFO  | For help or more information please see: http://activemq.apache.org | org.apache.activemq.broker.BrokerService | main
+2023-03-29 08:46:15,295 | WARN  | Store limit is 102400 mb (current store usage is 1 mb). The data directory: /opt/activemq/data/kahadb only has 40695 mb of usable space. - resetting to maximum available disk space: 40695 mb | org.apache.activemq.broker.BrokerService | main
+2023-03-29 08:46:15,308 | WARN  | Temporary Store limit is 51200 mb (current store usage is 0 mb). The data directory: /opt/activemq/data only has 40694 mb of usable space. - resetting to maximum available disk space: 40694 mb | org.apache.activemq.broker.BrokerService | main
+2023-03-29 08:47:02,190 | INFO  | Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@6e06451e: startup date [Wed Mar 29 08:47:02 UTC 2023]; root of context hierarchy | org.apache.activemq.xbean.XBeanBrokerFactory$1 | main
+2023-03-29 08:47:09,249 | INFO  | Using Persistence Adapter: KahaDBPersistenceAdapter[/opt/activemq/data/kahadb] | org.apache.activemq.broker.BrokerService | main
+2023-03-29 08:47:09,824 | INFO  | KahaDB is version 6 | org.apache.activemq.store.kahadb.MessageDatabase | main
+2023-03-29 08:47:10,152 | INFO  | PListStore:[/opt/activemq/data/localhost/tmp_storage] started | org.apache.activemq.store.kahadb.plist.PListStoreImpl | main
+2023-03-29 08:47:10,801 | INFO  | Apache ActiveMQ 5.15.6 (localhost, ID:e6fd426d9f26-35779-1680079630477-0:1) is starting | org.apache.activemq.broker.BrokerService | main
+2023-03-29 08:47:11,431 | INFO  | Listening for connections at: tcp://e6fd426d9f26:61616?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.TransportServerThreadSupport | main
+2023-03-29 08:47:11,440 | INFO  | Connector openwire started | org.apache.activemq.broker.TransportConnector | main
+2023-03-29 08:47:11,482 | INFO  | Listening for connections at: amqp://e6fd426d9f26:5672?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.TransportServerThreadSupport | main
+2023-03-29 08:47:11,491 | INFO  | Connector amqp started | org.apache.activemq.broker.TransportConnector | main
+2023-03-29 08:47:11,539 | INFO  | Listening for connections at: stomp://e6fd426d9f26:61613?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.TransportServerThreadSupport | main
+2023-03-29 08:47:11,547 | INFO  | Connector stomp started | org.apache.activemq.broker.TransportConnector | main
+2023-03-29 08:47:11,587 | INFO  | Listening for connections at: mqtt://e6fd426d9f26:1883?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.TransportServerThreadSupport | main
+2023-03-29 08:47:11,599 | INFO  | Connector mqtt started | org.apache.activemq.broker.TransportConnector | main
+2023-03-29 08:47:12,613 | WARN  | ServletContext@o.e.j.s.ServletContextHandler@49ff7d8c{/,null,STARTING} has uncovered http methods for path: / | org.eclipse.jetty.security.SecurityHandler | main
+2023-03-29 08:47:13,046 | INFO  | Listening for connections at ws://e6fd426d9f26:61614?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.ws.WSTransportServer | main
+2023-03-29 08:47:13,056 | INFO  | Connector ws started | org.apache.activemq.broker.TransportConnector | main
+2023-03-29 08:47:13,063 | INFO  | Apache ActiveMQ 5.15.6 (localhost, ID:e6fd426d9f26-35779-1680079630477-0:1) started | org.apache.activemq.broker.BrokerService | main
+2023-03-29 08:47:13,074 | INFO  | For help or more information please see: http://activemq.apache.org | org.apache.activemq.broker.BrokerService | main
+2023-03-29 08:47:13,087 | WARN  | Store limit is 102400 mb (current store usage is 1 mb). The data directory: /opt/activemq/data/kahadb only has 40693 mb of usable space. - resetting to maximum available disk space: 40693 mb | org.apache.activemq.broker.BrokerService | main
+2023-03-29 08:47:13,096 | WARN  | Temporary Store limit is 51200 mb (current store usage is 0 mb). The data directory: /opt/activemq/data only has 40691 mb of usable space. - resetting to maximum available disk space: 40691 mb | org.apache.activemq.broker.BrokerService | main
+2023-03-29 08:47:20,159 | INFO  | No Spring WebApplicationInitializer types detected on classpath | /admin | main
+2023-03-29 08:47:22,270 | INFO  | ActiveMQ WebConsole available at http://0.0.0.0:8161/ | org.apache.activemq.web.WebConsoleStarter | main
+2023-03-29 08:47:22,273 | INFO  | ActiveMQ Jolokia REST API available at http://0.0.0.0:8161/api/jolokia/ | org.apache.activemq.web.WebConsoleStarter | main
+2023-03-29 08:47:23,072 | INFO  | Initializing Spring FrameworkServlet 'dispatcher' | /admin | main
+2023-03-29 08:47:25,683 | INFO  | No Spring WebApplicationInitializer types detected on classpath | /api | main
+2023-03-29 08:47:26,638 | INFO  | jolokia-agent: Using policy access restrictor classpath:/jolokia-access.xml | /api | main
+2023-03-29 08:52:46,516 | INFO  | Connector vm://localhost started | org.apache.activemq.broker.TransportConnector | qtp280615803-52
