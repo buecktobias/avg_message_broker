@@ -685,3 +685,102 @@ org.springframework.web.util.NestedServletException: Request processing failed; 
 2023-03-29 08:47:25,683 | INFO  | No Spring WebApplicationInitializer types detected on classpath | /api | main
 2023-03-29 08:47:26,638 | INFO  | jolokia-agent: Using policy access restrictor classpath:/jolokia-access.xml | /api | main
 2023-03-29 08:52:46,516 | INFO  | Connector vm://localhost started | org.apache.activemq.broker.TransportConnector | qtp280615803-52
+2023-03-29 09:17:12,600 | INFO  | Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@6e06451e: startup date [Wed Mar 29 09:17:12 UTC 2023]; root of context hierarchy | org.apache.activemq.xbean.XBeanBrokerFactory$1 | main
+2023-03-29 09:17:19,198 | INFO  | Using Persistence Adapter: KahaDBPersistenceAdapter[/opt/activemq/data/kahadb] | org.apache.activemq.broker.BrokerService | main
+2023-03-29 09:17:19,662 | INFO  | KahaDB is version 6 | org.apache.activemq.store.kahadb.MessageDatabase | main
+2023-03-29 09:17:19,970 | INFO  | PListStore:[/opt/activemq/data/localhost/tmp_storage] started | org.apache.activemq.store.kahadb.plist.PListStoreImpl | main
+2023-03-29 09:17:20,543 | INFO  | Apache ActiveMQ 5.15.6 (localhost, ID:e6fd426d9f26-43139-1680081440114-0:1) is starting | org.apache.activemq.broker.BrokerService | main
+2023-03-29 09:17:21,132 | INFO  | Listening for connections at: tcp://e6fd426d9f26:61616?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.TransportServerThreadSupport | main
+2023-03-29 09:17:21,145 | INFO  | Connector openwire started | org.apache.activemq.broker.TransportConnector | main
+2023-03-29 09:17:21,189 | INFO  | Listening for connections at: amqp://e6fd426d9f26:5672?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.TransportServerThreadSupport | main
+2023-03-29 09:17:21,197 | INFO  | Connector amqp started | org.apache.activemq.broker.TransportConnector | main
+2023-03-29 09:17:21,238 | INFO  | Listening for connections at: stomp://e6fd426d9f26:61613?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.TransportServerThreadSupport | main
+2023-03-29 09:17:21,245 | INFO  | Connector stomp started | org.apache.activemq.broker.TransportConnector | main
+2023-03-29 09:17:21,290 | INFO  | Listening for connections at: mqtt://e6fd426d9f26:1883?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.TransportServerThreadSupport | main
+2023-03-29 09:17:21,301 | INFO  | Connector mqtt started | org.apache.activemq.broker.TransportConnector | main
+2023-03-29 09:17:22,266 | WARN  | ServletContext@o.e.j.s.ServletContextHandler@49ff7d8c{/,null,STARTING} has uncovered http methods for path: / | org.eclipse.jetty.security.SecurityHandler | main
+2023-03-29 09:17:22,683 | INFO  | Listening for connections at ws://e6fd426d9f26:61614?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.ws.WSTransportServer | main
+2023-03-29 09:17:22,689 | INFO  | Connector ws started | org.apache.activemq.broker.TransportConnector | main
+2023-03-29 09:17:22,697 | INFO  | Apache ActiveMQ 5.15.6 (localhost, ID:e6fd426d9f26-43139-1680081440114-0:1) started | org.apache.activemq.broker.BrokerService | main
+2023-03-29 09:17:22,709 | INFO  | For help or more information please see: http://activemq.apache.org | org.apache.activemq.broker.BrokerService | main
+2023-03-29 09:17:22,727 | WARN  | Store limit is 102400 mb (current store usage is 1 mb). The data directory: /opt/activemq/data/kahadb only has 40538 mb of usable space. - resetting to maximum available disk space: 40538 mb | org.apache.activemq.broker.BrokerService | main
+2023-03-29 09:17:22,738 | WARN  | Temporary Store limit is 51200 mb (current store usage is 0 mb). The data directory: /opt/activemq/data only has 40537 mb of usable space. - resetting to maximum available disk space: 40537 mb | org.apache.activemq.broker.BrokerService | main
+2023-03-29 09:17:29,746 | INFO  | No Spring WebApplicationInitializer types detected on classpath | /admin | main
+2023-03-29 09:17:32,120 | INFO  | ActiveMQ WebConsole available at http://0.0.0.0:8161/ | org.apache.activemq.web.WebConsoleStarter | main
+2023-03-29 09:17:32,123 | INFO  | ActiveMQ Jolokia REST API available at http://0.0.0.0:8161/api/jolokia/ | org.apache.activemq.web.WebConsoleStarter | main
+2023-03-29 09:17:32,936 | INFO  | Initializing Spring FrameworkServlet 'dispatcher' | /admin | main
+2023-03-29 09:17:35,993 | INFO  | No Spring WebApplicationInitializer types detected on classpath | /api | main
+2023-03-29 09:17:37,250 | INFO  | jolokia-agent: Using policy access restrictor classpath:/jolokia-access.xml | /api | main
+2023-03-29 09:19:44,723 | INFO  | Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@6e06451e: startup date [Wed Mar 29 09:19:44 UTC 2023]; root of context hierarchy | org.apache.activemq.xbean.XBeanBrokerFactory$1 | main
+2023-03-29 09:19:50,766 | INFO  | Using Persistence Adapter: KahaDBPersistenceAdapter[/opt/activemq/data/kahadb] | org.apache.activemq.broker.BrokerService | main
+2023-03-29 09:19:51,322 | INFO  | KahaDB is version 6 | org.apache.activemq.store.kahadb.MessageDatabase | main
+2023-03-29 09:19:51,657 | INFO  | PListStore:[/opt/activemq/data/localhost/tmp_storage] started | org.apache.activemq.store.kahadb.plist.PListStoreImpl | main
+2023-03-29 09:19:52,287 | INFO  | Apache ActiveMQ 5.15.6 (localhost, ID:83d11a7c75f2-33989-1680081591871-0:1) is starting | org.apache.activemq.broker.BrokerService | main
+2023-03-29 09:19:52,924 | INFO  | Listening for connections at: tcp://83d11a7c75f2:61616?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.TransportServerThreadSupport | main
+2023-03-29 09:19:52,933 | INFO  | Connector openwire started | org.apache.activemq.broker.TransportConnector | main
+2023-03-29 09:19:52,986 | INFO  | Listening for connections at: amqp://83d11a7c75f2:5672?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.TransportServerThreadSupport | main
+2023-03-29 09:19:52,997 | INFO  | Connector amqp started | org.apache.activemq.broker.TransportConnector | main
+2023-03-29 09:19:53,060 | INFO  | Listening for connections at: stomp://83d11a7c75f2:61613?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.TransportServerThreadSupport | main
+2023-03-29 09:19:53,069 | INFO  | Connector stomp started | org.apache.activemq.broker.TransportConnector | main
+2023-03-29 09:19:53,129 | INFO  | Listening for connections at: mqtt://83d11a7c75f2:1883?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.TransportServerThreadSupport | main
+2023-03-29 09:19:53,139 | INFO  | Connector mqtt started | org.apache.activemq.broker.TransportConnector | main
+2023-03-29 09:19:54,312 | WARN  | ServletContext@o.e.j.s.ServletContextHandler@49ff7d8c{/,null,STARTING} has uncovered http methods for path: / | org.eclipse.jetty.security.SecurityHandler | main
+2023-03-29 09:19:54,705 | INFO  | Listening for connections at ws://83d11a7c75f2:61614?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.ws.WSTransportServer | main
+2023-03-29 09:19:54,714 | INFO  | Connector ws started | org.apache.activemq.broker.TransportConnector | main
+2023-03-29 09:19:54,721 | INFO  | Apache ActiveMQ 5.15.6 (localhost, ID:83d11a7c75f2-33989-1680081591871-0:1) started | org.apache.activemq.broker.BrokerService | main
+2023-03-29 09:19:54,738 | INFO  | For help or more information please see: http://activemq.apache.org | org.apache.activemq.broker.BrokerService | main
+2023-03-29 09:19:54,756 | WARN  | Store limit is 102400 mb (current store usage is 1 mb). The data directory: /opt/activemq/data/kahadb only has 40535 mb of usable space. - resetting to maximum available disk space: 40535 mb | org.apache.activemq.broker.BrokerService | main
+2023-03-29 09:19:54,776 | WARN  | Temporary Store limit is 51200 mb (current store usage is 0 mb). The data directory: /opt/activemq/data only has 40533 mb of usable space. - resetting to maximum available disk space: 40533 mb | org.apache.activemq.broker.BrokerService | main
+2023-03-29 09:20:02,436 | INFO  | No Spring WebApplicationInitializer types detected on classpath | /admin | main
+2023-03-29 09:20:05,206 | INFO  | ActiveMQ WebConsole available at http://0.0.0.0:8161/ | org.apache.activemq.web.WebConsoleStarter | main
+2023-03-29 09:20:05,209 | INFO  | ActiveMQ Jolokia REST API available at http://0.0.0.0:8161/api/jolokia/ | org.apache.activemq.web.WebConsoleStarter | main
+2023-03-29 09:20:06,198 | INFO  | Initializing Spring FrameworkServlet 'dispatcher' | /admin | main
+2023-03-29 09:20:09,918 | INFO  | No Spring WebApplicationInitializer types detected on classpath | /api | main
+2023-03-29 09:20:11,165 | INFO  | jolokia-agent: Using policy access restrictor classpath:/jolokia-access.xml | /api | main
+2023-03-29 09:20:51,534 | INFO  | Connector vm://localhost started | org.apache.activemq.broker.TransportConnector | qtp280615803-44
+2023-03-29 11:37:46,011 | INFO  | Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@6e06451e: startup date [Wed Mar 29 11:37:46 UTC 2023]; root of context hierarchy | org.apache.activemq.xbean.XBeanBrokerFactory$1 | main
+2023-03-29 11:37:52,225 | INFO  | Using Persistence Adapter: KahaDBPersistenceAdapter[/opt/activemq/data/kahadb] | org.apache.activemq.broker.BrokerService | main
+2023-03-29 11:37:52,682 | INFO  | KahaDB is version 6 | org.apache.activemq.store.kahadb.MessageDatabase | main
+2023-03-29 11:37:53,029 | INFO  | PListStore:[/opt/activemq/data/localhost/tmp_storage] started | org.apache.activemq.store.kahadb.plist.PListStoreImpl | main
+2023-03-29 11:37:53,605 | INFO  | Apache ActiveMQ 5.15.6 (localhost, ID:83d11a7c75f2-39563-1680089873148-0:1) is starting | org.apache.activemq.broker.BrokerService | main
+2023-03-29 11:37:54,261 | INFO  | Listening for connections at: tcp://83d11a7c75f2:61616?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.TransportServerThreadSupport | main
+2023-03-29 11:37:54,271 | INFO  | Connector openwire started | org.apache.activemq.broker.TransportConnector | main
+2023-03-29 11:37:54,310 | INFO  | Listening for connections at: amqp://83d11a7c75f2:5672?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.TransportServerThreadSupport | main
+2023-03-29 11:37:54,319 | INFO  | Connector amqp started | org.apache.activemq.broker.TransportConnector | main
+2023-03-29 11:37:54,360 | INFO  | Listening for connections at: stomp://83d11a7c75f2:61613?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.TransportServerThreadSupport | main
+2023-03-29 11:37:54,371 | INFO  | Connector stomp started | org.apache.activemq.broker.TransportConnector | main
+2023-03-29 11:37:54,407 | INFO  | Listening for connections at: mqtt://83d11a7c75f2:1883?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.TransportServerThreadSupport | main
+2023-03-29 11:37:54,416 | INFO  | Connector mqtt started | org.apache.activemq.broker.TransportConnector | main
+2023-03-29 11:37:55,294 | WARN  | ServletContext@o.e.j.s.ServletContextHandler@49ff7d8c{/,null,STARTING} has uncovered http methods for path: / | org.eclipse.jetty.security.SecurityHandler | main
+2023-03-29 11:37:55,685 | INFO  | Listening for connections at ws://83d11a7c75f2:61614?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.ws.WSTransportServer | main
+2023-03-29 11:37:55,693 | INFO  | Connector ws started | org.apache.activemq.broker.TransportConnector | main
+2023-03-29 11:37:55,708 | INFO  | Apache ActiveMQ 5.15.6 (localhost, ID:83d11a7c75f2-39563-1680089873148-0:1) started | org.apache.activemq.broker.BrokerService | main
+2023-03-29 11:37:55,721 | INFO  | For help or more information please see: http://activemq.apache.org | org.apache.activemq.broker.BrokerService | main
+2023-03-29 11:37:55,738 | WARN  | Store limit is 102400 mb (current store usage is 1 mb). The data directory: /opt/activemq/data/kahadb only has 39009 mb of usable space. - resetting to maximum available disk space: 39009 mb | org.apache.activemq.broker.BrokerService | main
+2023-03-29 11:37:55,748 | WARN  | Temporary Store limit is 51200 mb (current store usage is 0 mb). The data directory: /opt/activemq/data only has 39007 mb of usable space. - resetting to maximum available disk space: 39007 mb | org.apache.activemq.broker.BrokerService | main
+2023-03-29 19:34:54,414 | INFO  | Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@6e06451e: startup date [Wed Mar 29 19:34:54 UTC 2023]; root of context hierarchy | org.apache.activemq.xbean.XBeanBrokerFactory$1 | main
+2023-03-29 19:35:02,585 | INFO  | Using Persistence Adapter: KahaDBPersistenceAdapter[/opt/activemq/data/kahadb] | org.apache.activemq.broker.BrokerService | main
+2023-03-29 19:35:03,259 | INFO  | KahaDB is version 6 | org.apache.activemq.store.kahadb.MessageDatabase | main
+2023-03-29 19:35:03,614 | INFO  | PListStore:[/opt/activemq/data/localhost/tmp_storage] started | org.apache.activemq.store.kahadb.plist.PListStoreImpl | main
+2023-03-29 19:35:04,268 | INFO  | Apache ActiveMQ 5.15.6 (localhost, ID:83d11a7c75f2-41151-1680118503869-0:1) is starting | org.apache.activemq.broker.BrokerService | main
+2023-03-29 19:35:05,020 | INFO  | Listening for connections at: tcp://83d11a7c75f2:61616?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.TransportServerThreadSupport | main
+2023-03-29 19:35:05,030 | INFO  | Connector openwire started | org.apache.activemq.broker.TransportConnector | main
+2023-03-29 19:35:05,082 | INFO  | Listening for connections at: amqp://83d11a7c75f2:5672?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.TransportServerThreadSupport | main
+2023-03-29 19:35:05,090 | INFO  | Connector amqp started | org.apache.activemq.broker.TransportConnector | main
+2023-03-29 19:35:05,136 | INFO  | Listening for connections at: stomp://83d11a7c75f2:61613?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.TransportServerThreadSupport | main
+2023-03-29 19:35:05,146 | INFO  | Connector stomp started | org.apache.activemq.broker.TransportConnector | main
+2023-03-29 19:35:05,195 | INFO  | Listening for connections at: mqtt://83d11a7c75f2:1883?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.TransportServerThreadSupport | main
+2023-03-29 19:35:05,204 | INFO  | Connector mqtt started | org.apache.activemq.broker.TransportConnector | main
+2023-03-29 19:35:06,373 | WARN  | ServletContext@o.e.j.s.ServletContextHandler@49ff7d8c{/,null,STARTING} has uncovered http methods for path: / | org.eclipse.jetty.security.SecurityHandler | main
+2023-03-29 19:35:06,893 | INFO  | Listening for connections at ws://83d11a7c75f2:61614?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.ws.WSTransportServer | main
+2023-03-29 19:35:06,903 | INFO  | Connector ws started | org.apache.activemq.broker.TransportConnector | main
+2023-03-29 19:35:06,913 | INFO  | Apache ActiveMQ 5.15.6 (localhost, ID:83d11a7c75f2-41151-1680118503869-0:1) started | org.apache.activemq.broker.BrokerService | main
+2023-03-29 19:35:06,924 | INFO  | For help or more information please see: http://activemq.apache.org | org.apache.activemq.broker.BrokerService | main
+2023-03-29 19:35:06,944 | WARN  | Store limit is 102400 mb (current store usage is 1 mb). The data directory: /opt/activemq/data/kahadb only has 35239 mb of usable space. - resetting to maximum available disk space: 35239 mb | org.apache.activemq.broker.BrokerService | main
+2023-03-29 19:35:06,957 | WARN  | Temporary Store limit is 51200 mb (current store usage is 0 mb). The data directory: /opt/activemq/data only has 35237 mb of usable space. - resetting to maximum available disk space: 35237 mb | org.apache.activemq.broker.BrokerService | main
+2023-03-29 19:35:14,313 | INFO  | No Spring WebApplicationInitializer types detected on classpath | /admin | main
+2023-03-29 19:35:16,561 | INFO  | ActiveMQ WebConsole available at http://0.0.0.0:8161/ | org.apache.activemq.web.WebConsoleStarter | main
+2023-03-29 19:35:16,564 | INFO  | ActiveMQ Jolokia REST API available at http://0.0.0.0:8161/api/jolokia/ | org.apache.activemq.web.WebConsoleStarter | main
+2023-03-29 19:35:17,527 | INFO  | Initializing Spring FrameworkServlet 'dispatcher' | /admin | main
+2023-03-29 19:35:21,010 | INFO  | No Spring WebApplicationInitializer types detected on classpath | /api | main
+2023-03-29 19:35:22,113 | INFO  | jolokia-agent: Using policy access restrictor classpath:/jolokia-access.xml | /api | main

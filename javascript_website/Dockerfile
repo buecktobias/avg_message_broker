@@ -3,5 +3,5 @@ FROM node:16-alpine
 WORKDIR /app
 
 COPY . .
-
-CMD ["node", "main.js"]
+RUN npm install
+CMD ["node", "main.js", "start"]
