@@ -8,16 +8,11 @@ import java.util.Base64;
 import java.util.Date;
 import java.util.Random;
 import org.json.Object;
+import java.util.UUID;
 
 public class HttpRequestSender {
     private final Date datum = new Date();
-    private final SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
     private final String formatiertesDatum = formatter.format(datum);
-    private Random rand = new Random();
-    private long min = 100000000000000000L; // 18-stellige Zahl
-    private long max = 999999999999999999L; // 18-stellige Zahl
-    private long generatedId = min + (long)(rand.nextDouble() * (max - min));
-
     private void RequestSender(String bestellung, String url) throws IOException {
         URL urlCon = new URL(url);
         HttpURLConnection con = (HttpURLConnection) urlCon.openConnection();
@@ -45,8 +40,9 @@ public class HttpRequestSender {
        // String hardwareBestellung = "BestellungsID: "+ generatedId + "\nDatum: " + formatiertesDatum + "\n" +
          //       "Stückzahl: " + anzahl "\nArtikelID: " + artikel;
 
+        UUID uuid = UUID.randomUUID();
         JSONObject jsonObj = new JSONObject();
-        jsonObj.put("BestellungsID", generatedId);
+        jsonObj.put("BestellungsID", uuid);
         jsonObj.put("Datum", formatiertesDatum);
         jsonObj.put("Stückzahl", anzahl);
         jsonObj.put("ArtikelID", artikel);
@@ -60,8 +56,9 @@ public class HttpRequestSender {
        // String softwareBestellung = "BestellungsID: " + generatedId + "\nDatum: " + formatiertesDatum + "\n" +
          //       "Stückzahl: " + anzahl "\nArtikelID: " + artikel;
 
+        UUID uuid = UUID.randomUUID();
         JSONObject jsonObj = new JSONObject();
-        jsonObj.put("BestellungsID", generatedId);
+        jsonObj.put("BestellungsID", uuid);
         jsonObj.put("Datum", formatiertesDatum);
         jsonObj.put("Stückzahl", anzahl);
         jsonObj.put("ArtikelID", artikel);
