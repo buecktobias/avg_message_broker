@@ -17,10 +17,10 @@ public class Main {
         System.out.println("POST wird gesendet...");
 
         switch (arg) {
-            case hardwareBestellung1 -> sender.hardwareBestellung("1");
-            case hardwareBestellung2 -> sender.hardwareBestellung("2");
-            case softwareBestellung1 -> sender.softwareBestellung("1");
-            case softwareBestellung2 -> sender.softwareBestellung("2");
+            case hardwareBestellung1 -> sender.hardwareBestellung("1", "5");
+            case hardwareBestellung2 -> sender.hardwareBestellung("2", "3");
+            case softwareBestellung1 -> sender.softwareBestellung("1", "1");
+            case softwareBestellung2 -> sender.softwareBestellung("2", "2");
             case dockerContainer -> Main.runDocker();
             default -> System.out.println("Fehler, bitte geben Sie eine Bestellung an.");
         }
