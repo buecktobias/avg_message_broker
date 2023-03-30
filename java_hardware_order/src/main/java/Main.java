@@ -1,12 +1,13 @@
-package src.main.java;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
 
+import javax.jms.*;
 
-public class ActiveMQReceiver {
+
+public class Main {
 
     // evlt url ausstauschen: "http://localhost:8161/api/message/SoftwareOrders?type=queue&clientId=1"
-    private static String url = "tcp://localhost:8616";
+    private static String url = "http://localhost:8161/api/message/SoftwareOrders?type=queue&clientId=1";
     private static String username = "admin";
     private static String password = "admin";
 
