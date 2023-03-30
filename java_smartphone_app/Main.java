@@ -1,6 +1,3 @@
-package de.avg;
-
-
 import java.io.IOException;
 
 public class Main {

@@ -1,5 +1,3 @@
-package de.avg;
-
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
@@ -58,7 +56,7 @@ public class HttpRequestSender {
                 "  \"Datum\": \"" + datum + "\",\n" +
                 "  \"Stückzahl\": " + anzahl + ",\n" +
                 "  \"ArtikelID\": \"" + artikel + "\"\n" +
-                "  \"ArtikelID\": \"005\"\n" +
+                "  \"KundenID\": \"3\"\n" +
                 "}";
 
         String softwareOrdersUrl = "http://activemq:8161/api/message/SoftwareOrders?type=queue";
