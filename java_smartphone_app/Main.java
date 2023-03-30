@@ -7,11 +7,13 @@ public class Main {
     private static final String softwareBestellung1 = "sendeSoftwareBestellung1";
     private static final String softwareBestellung2 = "sendeSoftwareBestellung2";
     private static final String dockerContainer = "startDockerContainer";
-    public static void runDocker(){
-        while(true){}
+    public static void runDocker() throws InterruptedException {
+        while(true){
+            Thread.sleep(1000);
+        }
     }
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InterruptedException {
         HttpRequestSender sender = new HttpRequestSender();
         String arg = args[0];
         System.out.println("POST wird gesendet...");

@@ -4,8 +4,15 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Base64;
+import java.util.Objects;
 
 public class Main {
+
+    public static void runDocker() throws InterruptedException {
+        while(true){
+            Thread.sleep(1000);
+        }
+    }
 
     private static void requestSender(String url) throws IOException {
         URL urlCon = new URL(url);
@@ -32,10 +39,22 @@ public class Main {
         System.out.println("Server-Antwort: " + content.toString());
     }
 
+    public static void loadMessages(String url, int delay) throws IOException, InterruptedException {
+        while(true){
+            requestSender(url);
+            Thread.sleep(delay);
+        }
+    }
 
-    public static void main(String[] args) throws IOException {
+
+    public static void main(String[] args) throws IOException, InterruptedException {
         // evlt url ausstauschen: "http://localhost:8161/api/message/SoftwareOrders?type=queue&clientId=1"
-        String url = "http://localhost:8161/api/message/SoftwareOrders?type=queue&clientId=1";
-        requestSender(url);
+        if(args.length > 0 && Objects.equals(args[0], "startDockerContainer")){
+            System.out.println("Java Hardware Order Started!");
+            Main.runDocker();
+        }else {
+            String url = "http://activemq:8161/api/message/SoftwareOrders?type=queue&oneShot=true";
+            loadMessages(url, 1000);
+        }
     }
 }

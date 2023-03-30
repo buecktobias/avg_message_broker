@@ -48,7 +48,15 @@
     <servlet-name>QueueBrowseServlet</servlet-name>
     <url-pattern>/queueBrowse/*</url-pattern>
   </servlet-mapping>
-
+  <servlet>
+    <servlet-name>MessageServlet</servlet-name>
+    <servlet-class>org.apache.activemq.web.MessageServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+    <init-param>
+      <param-name>destinationOptions</param-name>
+      <param-value>consumer.prefetchSize=10</param-value>
+    </init-param>
+  </servlet>
   <!-- track the session usage for web JMS clients -->
   <filter>
     <filter-name>session</filter-name>
