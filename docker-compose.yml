@@ -8,7 +8,7 @@ services:
     volumes:
       - ./activemq:/opt/apache-activemq-5.15.6
     environment:
-      - ACTIVEMQ_OPTS=-Xms2048m -Xmx3048m
+      - ACTIVEMQ_OPTS=-Xms3048m -Xmx3048m
     networks:
       - mynetwork
     deploy:
