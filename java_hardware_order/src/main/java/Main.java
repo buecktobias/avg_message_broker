@@ -1,53 +1,31 @@
 
-import org.apache.activemq.ActiveMQConnectionFactory;
-
-import javax.jms.*;
-
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.Base64;
 
 public class Main {
 
     // evlt url ausstauschen: "http://localhost:8161/api/message/SoftwareOrders?type=queue&clientId=1"
     private static String url = "http://localhost:8161/api/message/SoftwareOrders?type=queue&clientId=1";
-    private static String username = "admin";
-    private static String password = "admin";
 
+    private static void requestSender(String url) throws IOException {
+        URL urlCon = new URL(url);
+        HttpURLConnection con = (HttpURLConnection) urlCon.openConnection();
+        String username = "admin";
+        String password = "admin";
+        String auth = username + ":" + password;
+        byte[] encodedAuth = Base64.getEncoder().encode(auth.getBytes());
+        String authHeaderValue = "Basic " + new String(encodedAuth);
+        con.setRequestProperty("Authorization", authHeaderValue);
+        con.setRequestMethod("GET");
+        con.setRequestProperty("Content-Type", "application/json");
 
-    public static void main(String[] args) throws JMSException {
+        int statusCode = con.getResponseCode();
+        System.out.println("statusCode: " + statusCode);
+    }
 
-        // Erstelle eine Verbindungsfabrik für ActiveMQ
-        ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory(url);
-
-        // Setze die Anmeldedaten für die Verbindung
-        connectionFactory.setUserName(username);
-        connectionFactory.setPassword(password);
-
-        // Erstelle eine Verbindung zum ActiveMQ-Server
-        Connection connection = connectionFactory.createConnection();
-        connection.start();
-
-        // Erstelle eine Sitzung für den Empfang von Nachrichten
-        Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
-
-        // Erstelle ein Ziel für den Empfang von Nachrichten (hier: eine Queue mit dem Namen "example")
-        Destination destination = session.createQueue("example");
-
-        // Erstelle einen Empfänger für das Ziel
-        MessageConsumer consumer = session.createConsumer(destination);
-
-        // Empfange Nachrichten und gebe sie auf der Konsole aus
-        while (true) {
-            Message message = consumer.receive();
-            if (message instanceof TextMessage) {
-                TextMessage textMessage = (TextMessage) message;
-                System.out.println("Empfangene Bestellung: " + textMessage.getText());
-            } else {
-                System.out.println("Keine Bestellungen erhalten.");
-            }
-        }
-
-        // Schließe die Sitzung und die Verbindung
-        // (normalerweise wird dies in einem try-with-resources-Block gemacht, um sicherzustellen, dass sie immer geschlossen werden)
-        // session.close();
-        // connection.close();
+    public static void main(String[] args) throws IOException {
+        requestSender(url);
     }
 }

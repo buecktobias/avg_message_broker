@@ -19,13 +19,6 @@ services:
         reservations:
           cpus: '2'
           memory: 3G
-  java_hardware_order:
-    container_name: java_hardware_order
-    build: ./java_hardware_order/
-    networks:
-      - mynetwork
-    depends_on:
-      - activemq
   java_smartphone_app:
     container_name: java_smartphone_app
     build: ./java_smartphone_app
