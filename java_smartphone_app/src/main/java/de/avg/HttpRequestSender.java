@@ -1,20 +1,20 @@
 package de.avg;
+
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
-import java.text.SimpleDateFormat;
 import java.util.Base64;
 import java.util.Date;
-import java.util.Random;
-import org.json.*;
 import java.util.UUID;
 
+
 public class HttpRequestSender {
+
     private final Date datum = new Date();
+
     private void RequestSender(String bestellung, String url) throws IOException {
-        System.out.println("POST wird gesendet...");
         URL urlCon = new URL(url);
         HttpURLConnection con = (HttpURLConnection) urlCon.openConnection();
         String username = "admin";
@@ -38,35 +38,30 @@ public class HttpRequestSender {
     }
 
     public void hardwareBestellung(String artikel, String anzahl) throws IOException {
-       // String hardwareBestellung = "BestellungsID: "+ generatedId + "\nDatum: " + formatiertesDatum + "\n" +
-         //       "Stückzahl: " + anzahl "\nArtikelID: " + artikel;
-
         UUID uuid = UUID.randomUUID();
-        JSONObject jsonObj = new JSONObject();
-        jsonObj.put("BestellungsID", uuid);
-        jsonObj.put("Datum", datum);
-        jsonObj.put("Stückzahl", anzahl);
-        jsonObj.put("ArtikelID", artikel);
+        String hardwareBestellung = "{\n" +
+                "  \"BestellungsID\": \"" + uuid + "\",\n" +
+                "  \"Datum\": \"" + datum + "\",\n" +
+                "  \"Stückzahl\": \"" + anzahl + "\",\n" +
+                "  \"ArtikelID\": \"" + artikel + "\",\n" +
+                "  \"KundenID\": \"5\"\n" +
+                "}";
 
-        String jsonStr = jsonObj.toString();
         String hardwareOrdersUrl = "http://activemq:8161/api/message/HardwareOrders?type=queue";
-        RequestSender(jsonStr, hardwareOrdersUrl);
+        RequestSender(hardwareBestellung, hardwareOrdersUrl);
     }
 
     public void softwareBestellung(String artikel, String anzahl) throws IOException {
-       // String softwareBestellung = "BestellungsID: " + generatedId + "\nDatum: " + formatiertesDatum + "\n" +
-         //       "Stückzahl: " + anzahl "\nArtikelID: " + artikel;
-
         UUID uuid = UUID.randomUUID();
-        JSONObject jsonObj = new JSONObject();
-        jsonObj.put("BestellungsID", uuid);
-        jsonObj.put("Datum", datum);
-        jsonObj.put("Stückzahl", anzahl);
-        jsonObj.put("ArtikelID", artikel);
-
-        String jsonStr = jsonObj.toString();
+        String softwareBestellung = "{\n" +
+                "  \"BestellungsID\": \"" + uuid + "\",\n" +
+                "  \"Datum\": \"" + datum + "\",\n" +
+                "  \"Stückzahl\": " + anzahl + ",\n" +
+                "  \"ArtikelID\": \"" + artikel + "\"\n" +
+                "  \"ArtikelID\": \"005\"\n" +
+                "}";
 
         String softwareOrdersUrl = "http://activemq:8161/api/message/SoftwareOrders?type=queue";
-        RequestSender(jsonStr, softwareOrdersUrl);
+        RequestSender(softwareBestellung, softwareOrdersUrl);
     }
 }

@@ -1,4 +1,6 @@
 package de.avg;
+
+
 import java.io.IOException;
 
 public class Main {
@@ -11,10 +13,11 @@ public class Main {
     public static void runDocker(){
         while(true){}
     }
-    
+
     public static void main(String[] args) throws IOException {
         HttpRequestSender sender = new HttpRequestSender();
         String arg = args[0];
+        System.out.println("POST wird gesendet...");
 
         switch (arg) {
             case hardwareBestellung1 -> sender.hardwareBestellung("1", "5");
