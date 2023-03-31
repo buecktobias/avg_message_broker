@@ -11,15 +11,17 @@ public abstract class Order {
         this.orderTime = new Date();
         this.customerId = customerId;
     }
-    protected String getOrderType(){
-        if(this instanceof HardwareOrder){
+
+    protected String getOrderType() {
+        if (this instanceof HardwareOrder) {
             return "HardwareOrder";
-        }else if(this instanceof SoftwareOrder){
+        } else if (this instanceof SoftwareOrder) {
             return "SoftwareOrder";
-        }else{
+        } else {
             throw new RuntimeException("Unknown Order!");
         }
     }
+
     public abstract String toJSON();
 
     protected UUID getOrderId() {

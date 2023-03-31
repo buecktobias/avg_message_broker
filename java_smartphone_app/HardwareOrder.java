@@ -1,7 +1,7 @@
 import java.util.Date;
 import java.util.UUID;
 
-public class HardwareOrder extends Order{
+public class HardwareOrder extends Order {
     private final int orderAmount;
     private final int articleId;
 

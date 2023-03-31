@@ -1,7 +1,4 @@
-import java.util.Date;
-import java.util.UUID;
-
-public class SoftwareOrder extends Order{
+public class SoftwareOrder extends Order {
     private final LicenceType licenceType;
 
     public SoftwareOrder(int customerId, LicenceType licenceType) {
