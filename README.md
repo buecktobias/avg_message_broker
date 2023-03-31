@@ -60,7 +60,6 @@ docker-compose exec javascript_website node main.js HardwareBestellung
 ### Beschreibung
 Erst werden die Consumer und Producer gestartet, anschließend senden die Producer Bestellungen an die Consumer.
 ### Ausführung
-In den AvG Ordner wechseln
 1. Zuerst mit `docker compose up --build` alle 4 Container starten. (Im Terminal und im richtigen Pfad unseres Projekts)
 
 2. Danach `.\scenario_consumers_started_both_producers_sending.bat` ausführen.
