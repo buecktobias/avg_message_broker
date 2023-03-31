@@ -64,3 +64,12 @@ In den AvG Ordner wechseln
 Zuerst mit `docker compose up --build` die Container starten. Warten bis alle Container gestartet sind (dauert ca. 40 Sekunden).
 Danach `.\scenario_consumers_started_both_producers_sending.bat` ausführen.
 Es öffnen sich zwei Fenster, das eine zeigt den Output vom Java Hardware Consumer und der andere vom Javascript Software Consumer.
+
+## Scenario 2 - Zuerst senden beide Producer dann werden die Consumer gestartet
+### Beschreibung
+Zuerst senden beide Producer ihre Bestellungen, dann werden die Consumer gestartet.
+### Ausführung
+In den AvG Ordner wechseln
+Zuerst mit `docker-compose -f docker-compose.yml up javascript_website java_smartphone_app` die beiden Producer Container starten.
+Danach `scenario_consumers_started_after_both_producers_sending` ausführen.
+Anschließend 'docker-compose -f docker-compose.yml up java_hardware_order javascript_software_order' die beiden Consumer Container starten.
