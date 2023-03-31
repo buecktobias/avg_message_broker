@@ -36,7 +36,7 @@ public class Main {
         }
         in.close();
         if(statusCode == 200) {
-            System.out.println("Neue Hardware Order: " + content.toString());
+            System.out.println("Neue Hardware Order: " + content);
         }
     }
 

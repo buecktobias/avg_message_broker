@@ -1,4 +1,6 @@
 import java.io.IOException;
+import java.util.Date;
+import java.util.UUID;
 
 public class Main {
 
@@ -13,18 +15,22 @@ public class Main {
             Thread.sleep(1000);
         }
     }
-
-    public static void main(String[] args) throws IOException, InterruptedException {
-        HttpRequestSender sender = new HttpRequestSender();
+    private static void start(String[] args) throws IOException, InterruptedException {
+        var sender = new OrderSender();
         String arg = args[0];
 
         switch (arg) {
-            case hardwareBestellung1 -> sender.hardwareBestellung("1", "5");
-            case hardwareBestellung2 -> sender.hardwareBestellung("2", "3");
-            case softwareBestellung1 -> sender.softwareBestellung("1", "1");
-            case softwareBestellung2 -> sender.softwareBestellung("2", "2");
+            case hardwareBestellung1 -> sender.hardwareBestellung(1, 5);
+            case hardwareBestellung2 -> sender.hardwareBestellung(2, 3);
+            case softwareBestellung1 -> sender.softwareBestellung(1, 1);
+            case softwareBestellung2 -> sender.softwareBestellung(2, 2);
             case dockerContainer -> Main.runDocker();
             default -> System.out.println("Fehler, bitte geben Sie eine Bestellung an.");
         }
+    }
+
+    public static void main(String[] args) throws IOException, InterruptedException {
+        var uuid = UUID.randomUUID();
+        System.out.println(new HardwareOrder(uuid,new Date(),10, 3, 3).toJSON());
     }
 }
