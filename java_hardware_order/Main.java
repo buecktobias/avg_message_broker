@@ -27,7 +27,6 @@ public class Main {
         con.setRequestProperty("Content-Type", "application/json");
 
         int statusCode = con.getResponseCode();
-        System.out.println("statusCode: " + statusCode);
 
         BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
         String inputLine;
@@ -36,7 +35,9 @@ public class Main {
             content.append(inputLine);
         }
         in.close();
-        System.out.println("Server-Antwort: " + content.toString());
+        if(statusCode == 200) {
+            System.out.println("Server-Antwort: " + content.toString());
+        }
     }
 
     public static void loadMessages(String url, int delay) throws IOException, InterruptedException {
@@ -49,12 +50,12 @@ public class Main {
 
     public static void main(String[] args) throws IOException, InterruptedException {
         // evlt url ausstauschen: "http://localhost:8161/api/message/SoftwareOrders?type=queue&clientId=1"
+        System.out.println("Java Hardware Order Started!");
         if(args.length > 0 && Objects.equals(args[0], "startDockerContainer")){
-            System.out.println("Java Hardware Order Started!");
             Main.runDocker();
         }else {
             String url = "http://activemq:8161/api/message/SoftwareOrders?type=queue&oneShot=true";
-            loadMessages(url, 1000);
+            loadMessages(url, 100);
         }
     }
 }

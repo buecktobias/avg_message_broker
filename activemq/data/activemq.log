@@ -2156,3 +2156,30 @@ javax.servlet.ServletException: Concurrent access to consumer is not supported
 2023-03-30 20:17:28,258 | INFO  | No Spring WebApplicationInitializer types detected on classpath | /api | main
 2023-03-30 20:17:29,269 | INFO  | jolokia-agent: Using policy access restrictor classpath:/jolokia-access.xml | /api | main
 2023-03-30 20:18:32,339 | INFO  | Connector vm://localhost started | org.apache.activemq.broker.TransportConnector | qtp885910946-53
+2023-03-30 20:26:08,008 | INFO  | Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@6e06451e: startup date [Thu Mar 30 20:26:08 UTC 2023]; root of context hierarchy | org.apache.activemq.xbean.XBeanBrokerFactory$1 | main
+2023-03-30 20:26:14,286 | INFO  | Using Persistence Adapter: KahaDBPersistenceAdapter[/opt/activemq/data/kahadb] | org.apache.activemq.broker.BrokerService | main
+2023-03-30 20:26:14,777 | INFO  | KahaDB is version 6 | org.apache.activemq.store.kahadb.MessageDatabase | main
+2023-03-30 20:26:15,151 | INFO  | PListStore:[/opt/activemq/data/localhost/tmp_storage] started | org.apache.activemq.store.kahadb.plist.PListStoreImpl | main
+2023-03-30 20:26:15,754 | INFO  | Apache ActiveMQ 5.15.6 (localhost, ID:abb103ae191c-37741-1680207975283-0:1) is starting | org.apache.activemq.broker.BrokerService | main
+2023-03-30 20:26:16,428 | INFO  | Listening for connections at: tcp://abb103ae191c:61616?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.TransportServerThreadSupport | main
+2023-03-30 20:26:16,435 | INFO  | Connector openwire started | org.apache.activemq.broker.TransportConnector | main
+2023-03-30 20:26:16,464 | INFO  | Listening for connections at: amqp://abb103ae191c:5672?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.TransportServerThreadSupport | main
+2023-03-30 20:26:16,472 | INFO  | Connector amqp started | org.apache.activemq.broker.TransportConnector | main
+2023-03-30 20:26:16,508 | INFO  | Listening for connections at: stomp://abb103ae191c:61613?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.TransportServerThreadSupport | main
+2023-03-30 20:26:16,516 | INFO  | Connector stomp started | org.apache.activemq.broker.TransportConnector | main
+2023-03-30 20:26:16,554 | INFO  | Listening for connections at: mqtt://abb103ae191c:1883?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.TransportServerThreadSupport | main
+2023-03-30 20:26:16,561 | INFO  | Connector mqtt started | org.apache.activemq.broker.TransportConnector | main
+2023-03-30 20:26:17,501 | WARN  | ServletContext@o.e.j.s.ServletContextHandler@2ef14fe{/,null,STARTING} has uncovered http methods for path: / | org.eclipse.jetty.security.SecurityHandler | main
+2023-03-30 20:26:17,794 | INFO  | Listening for connections at ws://abb103ae191c:61614?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.ws.WSTransportServer | main
+2023-03-30 20:26:17,798 | INFO  | Connector ws started | org.apache.activemq.broker.TransportConnector | main
+2023-03-30 20:26:17,803 | INFO  | Apache ActiveMQ 5.15.6 (localhost, ID:abb103ae191c-37741-1680207975283-0:1) started | org.apache.activemq.broker.BrokerService | main
+2023-03-30 20:26:17,808 | INFO  | For help or more information please see: http://activemq.apache.org | org.apache.activemq.broker.BrokerService | main
+2023-03-30 20:26:17,819 | WARN  | Store limit is 102400 mb (current store usage is 3 mb). The data directory: /opt/activemq/data/kahadb only has 36437 mb of usable space. - resetting to maximum available disk space: 36437 mb | org.apache.activemq.broker.BrokerService | main
+2023-03-30 20:26:17,826 | WARN  | Temporary Store limit is 51200 mb (current store usage is 0 mb). The data directory: /opt/activemq/data only has 36434 mb of usable space. - resetting to maximum available disk space: 36434 mb | org.apache.activemq.broker.BrokerService | main
+2023-03-30 20:26:23,406 | INFO  | No Spring WebApplicationInitializer types detected on classpath | /admin | main
+2023-03-30 20:26:24,845 | INFO  | ActiveMQ WebConsole available at http://0.0.0.0:8161/ | org.apache.activemq.web.WebConsoleStarter | main
+2023-03-30 20:26:24,848 | INFO  | ActiveMQ Jolokia REST API available at http://0.0.0.0:8161/api/jolokia/ | org.apache.activemq.web.WebConsoleStarter | main
+2023-03-30 20:26:25,436 | INFO  | Initializing Spring FrameworkServlet 'dispatcher' | /admin | main
+2023-03-30 20:26:27,291 | INFO  | No Spring WebApplicationInitializer types detected on classpath | /api | main
+2023-03-30 20:26:28,056 | INFO  | jolokia-agent: Using policy access restrictor classpath:/jolokia-access.xml | /api | main
+2023-03-30 20:26:35,352 | INFO  | Connector vm://localhost started | org.apache.activemq.broker.TransportConnector | qtp885910946-45
