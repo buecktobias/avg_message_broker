@@ -23,21 +23,19 @@ public class OrderReceiver {
         return "Basic " + new String(encodedAuth);
     }
     public void getNewHardwareOrders(String url) throws IOException {
-        var con = getActiveMQConnection(url);
-        con.setRequestProperty("Authorization", getAuthString());
-        con.setRequestMethod("GET");
-        con.setRequestProperty("Content-Type", "application/json");
+        var activeMQConnection = getActiveMQConnection(url);
+        activeMQConnection.setRequestProperty("Authorization", getAuthString());
+        activeMQConnection.setRequestMethod("GET");
+        activeMQConnection.setRequestProperty("Content-Type", "application/json");
 
-        var statusCode = con.getResponseCode();
-
-        var in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+        var in = new BufferedReader(new InputStreamReader(activeMQConnection.getInputStream()));
         String inputLine;
         var content = new StringBuilder();
         while ((inputLine = in.readLine()) != null) {
             content.append(inputLine);
         }
         in.close();
-        if(statusCode == 200) {
+        if(activeMQConnection.getResponseCode() == 200) {
             System.out.println("Neue Hardware Order: " + content);
         }
     }
