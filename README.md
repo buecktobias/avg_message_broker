@@ -74,3 +74,13 @@ Zuerst senden beide Producer ihre Bestellungen, anschließend werden die Consume
 2. `scenario_consumers_started_after_both_producers_sending` ausführen. Hierbei werden die Bestellungen abgesendet, und landen in der Warteschlange bei ActiveMQ
 
 3. Anschließend mit `docker-compose -f docker-compose.yml up java_hardware_order javascript_software_order` die beiden Consumer Container starten ( In einem neuen Terminal). Diese bearbeiten anschließend die Bestellungen in der Warteschlange.
+
+
+## Scenario 3 - Active MQ wird beendet, währendessen versuchen die Producer zu senden
+### Beschreibung
+Active MQ wird beendet, währenddessen versuchen die Producer zu senden.
+### Ausführung
+In den AvG Ordner wechseln
+Zuerst mit `docker compose up --build` die Container starten. Warten bis alle Container gestartet sind (dauert ca. 40 Sekunden).
+Danach `.\scenario_activemq_stops.bat` ausführen.
+Es öffnen sich drei Fenster, das erste zeigt wie die ersten drei Befehle ausgeführt werden und Active MQ geschlossen wird. Währendessen startet die Java Hardware Order und fängt an zuzuhören, wirft aber schnell eine Exception, weil die Verbindung zu Active MQ abricht. Das dritte Fenster wirft dauerhaft neu Fehlermeldungen, weil der DNS_Name nicht aufgelöst werden kann.
