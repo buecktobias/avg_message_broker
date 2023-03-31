@@ -68,7 +68,7 @@ Es öffnen sich zwei Fenster welche den jeweiligen Output der Hardware und Softw
 
 ## Scenario 2 - Zuerst senden beide Producer dann werden die Consumer gestartet
 ### Beschreibung
-Zuerst senden beide Producer ihre Bestellungen, dann werden die Consumer gestartet.
+Zuerst senden beide Producer ihre Bestellungen, anschließend werden die Consumer gestartet und bearbeiten die Warteschlange.
 ### Ausführung
 1. Zuerst mit `docker-compose -f docker-compose.yml up javascript_website java_smartphone_app` die beiden Producer Container starten. (Im Terminal und im richtigen Path unseres Projekts)
 
