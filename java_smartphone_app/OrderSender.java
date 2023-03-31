@@ -44,8 +44,7 @@ public class OrderSender {
             os.write(input, 0, input.length);
         }
 
-        int statusCode = activeMQOrderConnection.getResponseCode();
-        System.out.println("statusCode: " + statusCode);
+        System.out.println("statusCode: " + activeMQOrderConnection.getResponseCode());
     }
 
     public void sendHardwareOrder(int articleId, int articleAmount) throws IOException {
