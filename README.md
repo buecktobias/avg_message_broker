@@ -73,4 +73,4 @@ Zuerst senden beide Producer ihre Bestellungen, dann werden die Consumer gestart
 
 2.`scenario_consumers_started_after_both_producers_sending` ausführen. Hierbei werden die Bestellungen abgesendet.
 
-3.Anschließend mit 'docker-compose -f docker-compose.yml up java_hardware_order javascript_software_order' die beiden Consumer Container starten.
+3.Anschließend mit 'docker-compose -f docker-compose.yml up java_hardware_order javascript_software_order' die beiden Consumer Container starten ( In einem neuen Terminal).
