@@ -69,7 +69,8 @@ Es öffnen sich zwei Fenster, das eine zeigt den Output vom Java Hardware Consum
 ### Beschreibung
 Zuerst senden beide Producer ihre Bestellungen, dann werden die Consumer gestartet.
 ### Ausführung
-In den AvG Ordner wechseln
-Zuerst mit `docker-compose -f docker-compose.yml up javascript_website java_smartphone_app` die beiden Producer Container starten.
-Danach `scenario_consumers_started_after_both_producers_sending` ausführen.
-Anschließend 'docker-compose -f docker-compose.yml up java_hardware_order javascript_software_order' die beiden Consumer Container starten.
+1. Zuerst mit `docker-compose -f docker-compose.yml up javascript_website java_smartphone_app` die beiden Producer Container starten. ( Im Terminal und im richtigen Path unseres Projekts
+
+2.`scenario_consumers_started_after_both_producers_sending` ausführen. Hierbei werden die Bestellungen abgesendet.
+
+3.Anschließend mit 'docker-compose -f docker-compose.yml up java_hardware_order javascript_software_order' die beiden Consumer Container starten.
