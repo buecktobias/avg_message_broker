@@ -81,6 +81,6 @@ Zuerst senden beide Producer ihre Bestellungen, anschließend werden die Consume
 Active MQ wird beendet, währenddessen versuchen die Producer zu senden.
 ### Ausführung
 In den AvG Ordner wechseln
-Zuerst mit `docker compose up --build` die Container starten. Warten bis alle Container gestartet sind (dauert ca. 40 Sekunden).
+Zuerst mit `docker compose up --build` die Container starten. Warten bis alle Container gestartet sind.
 Danach `.\scenario_activemq_stops.bat` ausführen.
 Es öffnen sich drei Fenster, das erste zeigt wie die ersten drei Befehle ausgeführt werden und Active MQ geschlossen wird. Währendessen startet die Java Hardware Order und fängt an zuzuhören, wirft aber schnell eine Exception, weil die Verbindung zu Active MQ abricht. Das dritte Fenster wirft dauerhaft neu Fehlermeldungen, weil der DNS_Name nicht aufgelöst werden kann.
