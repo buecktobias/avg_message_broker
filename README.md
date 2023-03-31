@@ -58,19 +58,20 @@ docker-compose exec javascript_website node main.js HardwareBestellung
 # Scenarios
 ## Scenario 1 - Zuerst werden beide Consumer gestartet dann senden beide Producer
 ### Beschreibung
-Zuerst werden beide Consumer gestartet dann senden beide Producer.
+Erst werden die Consumer und Producer gestartet, anschließend senden die Producer Bestellungen an die Consumer.
 ### Ausführung
 In den AvG Ordner wechseln
-Zuerst mit `docker compose up --build` die Container starten. Warten bis alle Container gestartet sind (dauert ca. 40 Sekunden).
-Danach `.\scenario_consumers_started_both_producers_sending.bat` ausführen.
-Es öffnen sich zwei Fenster, das eine zeigt den Output vom Java Hardware Consumer und der andere vom Javascript Software Consumer.
+1. Zuerst mit `docker compose up --build` alle 4 Container starten. (Im Terminal und im richtigen Pfad unseres Projekts)
+
+2. Danach `.\scenario_consumers_started_both_producers_sending.bat` ausführen.
+Es öffnen sich zwei Fenster welche den jeweiligen Output der Hardware und Software Consumer anzeigen.
 
 ## Scenario 2 - Zuerst senden beide Producer dann werden die Consumer gestartet
 ### Beschreibung
 Zuerst senden beide Producer ihre Bestellungen, dann werden die Consumer gestartet.
 ### Ausführung
-1. Zuerst mit `docker-compose -f docker-compose.yml up javascript_website java_smartphone_app` die beiden Producer Container starten. ( Im Terminal und im richtigen Path unseres Projekts
+1. Zuerst mit `docker-compose -f docker-compose.yml up javascript_website java_smartphone_app` die beiden Producer Container starten. (Im Terminal und im richtigen Path unseres Projekts)
 
-2.`scenario_consumers_started_after_both_producers_sending` ausführen. Hierbei werden die Bestellungen abgesendet.
+2. `scenario_consumers_started_after_both_producers_sending` ausführen. Hierbei werden die Bestellungen abgesendet, und landen in der Warteschlange bei ActiveMQ
 
-3.Anschließend mit 'docker-compose -f docker-compose.yml up java_hardware_order javascript_software_order' die beiden Consumer Container starten ( In einem neuen Terminal).
+3. Anschließend mit `docker-compose -f docker-compose.yml up java_hardware_order javascript_software_order` die beiden Consumer Container starten ( In einem neuen Terminal). Diese bearbeiten anschließend die Bestellungen in der Warteschlange.
