@@ -17,7 +17,6 @@ services:
           cpus: '3'
           memory: 5G
         reservations:
-          cpus: '2'
           memory: 3G
   java_smartphone_app:
     container_name: java_smartphone_app

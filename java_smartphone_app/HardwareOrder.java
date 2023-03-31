@@ -17,7 +17,7 @@ public class HardwareOrder extends Order {
                                 "BestellungsId": "%s",
                                 "BestellArt": "%s",
                                 "Datum": "%s",
-                                "Stückzahl": %s,
+                                "Stueckzahl": %s,
                                 "ArtikelId": %s,
                                 "KundenId": %s
                         }
