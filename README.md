@@ -54,3 +54,13 @@ docker-compose exec javascript_website node main.js HardwareBestellung
 - Keine Vergleiche mit **==** stattdessen **===**
 - Kein **var** verwenden
 - Wenn möglich Konstanten **const** statt **let**  verwenden
+
+# Scenarios
+## Scenario 1 - Zuerst werden beide Consumer gestartet dann senden beide Producer
+### Beschreibung
+Zuerst werden beide Consumer gestartet dann senden beide Producer.
+### Ausführung
+In den AvG Ordner wechseln
+Zuerst mit `docker compose up --build` die Container starten. Warten bis alle Container gestartet sind (dauert ca. 40 Sekunden).
+Danach `.\scenario_consumers_started_both_producers_sending.bat` ausführen.
+Es öffnen sich zwei Fenster, das eine zeigt den Output vom Java Hardware Consumer und der andere vom Javascript Software Consumer.
