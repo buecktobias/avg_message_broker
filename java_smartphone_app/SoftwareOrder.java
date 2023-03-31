@@ -4,8 +4,8 @@ import java.util.UUID;
 public class SoftwareOrder extends Order{
     private final LicenceType licenceType;
 
-    public SoftwareOrder(UUID orderId, Date orderTime, int customerId, LicenceType licenceType) {
-        super(orderId, orderTime, customerId);
+    public SoftwareOrder(int customerId, LicenceType licenceType) {
+        super(customerId);
         this.licenceType = licenceType;
     }
 

@@ -5,8 +5,8 @@ public class HardwareOrder extends Order{
     private final int orderAmount;
     private final int articleId;
 
-    public HardwareOrder(UUID orderId, Date orderTime, int customerId, int orderAmount, int articleId) {
-        super(orderId, orderTime, customerId);
+    public HardwareOrder(int customerId, int orderAmount, int articleId) {
+        super(customerId);
         this.orderAmount = orderAmount;
         this.articleId = articleId;
     }

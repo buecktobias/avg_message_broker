@@ -1,7 +1,6 @@
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.Base64;
@@ -12,9 +11,10 @@ import java.util.UUID;
 public class OrderSender {
 
     private final Date datum = new Date();
-    private final String USERNAME = "admin";
-    private final String PASSWORD = "admin";
+
     private String getAuthConnectionString(){
+        final var USERNAME = "admin";
+        final var PASSWORD = "admin";
         var auth = USERNAME + ":" + PASSWORD;
         byte[] encodedAuth = Base64.getEncoder().encode(auth.getBytes());
         return "Basic " + new String(encodedAuth);
@@ -30,7 +30,8 @@ public class OrderSender {
         }
         return activeMQOrderConnection;
     }
-    private void sendRequest(String orderText, String url) throws IOException {
+    private void sendOrder(Order order, String url) throws IOException {
+        var orderText = order.toJSON();
         var activeMQOrderConnection = this.getActiveMQConnection(url);
         activeMQOrderConnection.setRequestProperty("Authorization", getAuthConnectionString());
         activeMQOrderConnection.setRequestMethod("POST");
@@ -47,33 +48,17 @@ public class OrderSender {
         System.out.println("statusCode: " + statusCode);
     }
 
-    public void hardwareBestellung(int artikel, int anzahl) throws IOException {
-        var uuid = UUID.randomUUID();
-        var hardwareBestellung = "{\n" +
-                "  \"BestellungsID\": \"" + uuid + "\",\n" +
-                "  \"Datum\": \"" + datum + "\",\n" +
-                "  \"Stückzahl\": \"" + anzahl + "\",\n" +
-                "  \"ArtikelID\": \"" + artikel + "\",\n" +
-                "  \"KundenID\": \"5\"\n" +
-                "}";
-
+    public void sendHardwareOrder(int articleId, int articleAmount) throws IOException {
+        var hardwareOrder = new HardwareOrder(5, articleAmount, articleId);
         var hardwareOrdersUrl = "http://activemq:8161/api/message/HardwareOrders?type=queue";
         System.out.println("Sende Hardware Bestellung !");
-        sendRequest(hardwareBestellung, hardwareOrdersUrl);
+        sendOrder(hardwareOrder, hardwareOrdersUrl);
     }
 
-    public void softwareBestellung(int artikel, int anzahl) throws IOException {
-        var uuid = UUID.randomUUID();
-        var softwareBestellung = "{\n" +
-                "  \"BestellungsID\": \"" + uuid + "\",\n" +
-                "  \"Datum\": \"" + datum + "\",\n" +
-                "  \"Stückzahl\": " + anzahl + ",\n" +
-                "  \"ArtikelID\": \"" + artikel + "\"\n" +
-                "  \"KundenID\": \"3\"\n" +
-                "}";
-
+    public void sendSoftwareOrder(int articleId) throws IOException {
+        var softwareOrder = new SoftwareOrder(articleId, LicenceType.BASIC);
         var softwareOrdersUrl = "http://activemq:8161/api/message/SoftwareOrders?type=queue";
         System.out.println("Sende Software Bestellung");
-        sendRequest(softwareBestellung, softwareOrdersUrl);
+        sendOrder(softwareOrder, softwareOrdersUrl);
     }
 }

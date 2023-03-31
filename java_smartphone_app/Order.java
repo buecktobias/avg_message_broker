@@ -6,9 +6,9 @@ public abstract class Order {
     private final Date orderTime;
     private final int customerId;
 
-    public Order(UUID orderId, Date orderTime, int customerId) {
-        this.orderId = orderId;
-        this.orderTime = orderTime;
+    public Order(int customerId) {
+        this.orderId = UUID.randomUUID();
+        this.orderTime = new Date();
         this.customerId = customerId;
     }
     protected String getOrderType(){
