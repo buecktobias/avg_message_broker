@@ -15,28 +15,28 @@ public class Main {
     }
 
     private static void requestSender(String url) throws IOException {
-        URL urlCon = new URL(url);
-        HttpURLConnection con = (HttpURLConnection) urlCon.openConnection();
-        String username = "admin";
-        String password = "admin";
-        String auth = username + ":" + password;
+        var urlCon = new URL(url);
+        var con = (HttpURLConnection) urlCon.openConnection();
+        var username = "admin";
+        var password = "admin";
+        var auth = username + ":" + password;
         byte[] encodedAuth = Base64.getEncoder().encode(auth.getBytes());
-        String authHeaderValue = "Basic " + new String(encodedAuth);
+        var authHeaderValue = "Basic " + new String(encodedAuth);
         con.setRequestProperty("Authorization", authHeaderValue);
         con.setRequestMethod("GET");
         con.setRequestProperty("Content-Type", "application/json");
 
-        int statusCode = con.getResponseCode();
+        var statusCode = con.getResponseCode();
 
-        BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+        var in = new BufferedReader(new InputStreamReader(con.getInputStream()));
         String inputLine;
-        StringBuilder content = new StringBuilder();
+        var content = new StringBuilder();
         while ((inputLine = in.readLine()) != null) {
             content.append(inputLine);
         }
         in.close();
         if(statusCode == 200) {
-            System.out.println("Server-Antwort: " + content.toString());
+            System.out.println("Neue Hardware Order: " + content.toString());
         }
     }
 
@@ -51,10 +51,15 @@ public class Main {
     public static void main(String[] args) throws IOException, InterruptedException {
         // evlt url ausstauschen: "http://localhost:8161/api/message/SoftwareOrders?type=queue&clientId=1"
         System.out.println("Java Hardware Order Started!");
-        if(args.length > 0 && Objects.equals(args[0], "startDockerContainer")){
+        if (args.length > 0 && Objects.equals(args[0], "startDockerContainer")) {
             Main.runDocker();
+        }else if(args.length > 0 && Objects.equals(args[0], "startListening")){
+            System.out.println("Java Hardware Order Listening");
+            var url = "http://activemq:8161/api/message/HardwareOrders?type=queue&oneShot=true";
+            loadMessages(url, 100);
         }else {
-            String url = "http://activemq:8161/api/message/SoftwareOrders?type=queue&oneShot=true";
+            System.out.println("Java Hardware Order Listening");
+            var url = "http://activemq:8161/api/message/HardwareOrders?type=queue&oneShot=true";
             loadMessages(url, 100);
         }
     }

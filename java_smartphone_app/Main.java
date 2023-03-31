@@ -8,6 +8,7 @@ public class Main {
     private static final String softwareBestellung2 = "sendeSoftwareBestellung2";
     private static final String dockerContainer = "startDockerContainer";
     public static void runDocker() throws InterruptedException {
+        System.out.println("Smartphone App Started!");
         while(true){
             Thread.sleep(1000);
         }
@@ -16,7 +17,6 @@ public class Main {
     public static void main(String[] args) throws IOException, InterruptedException {
         HttpRequestSender sender = new HttpRequestSender();
         String arg = args[0];
-        System.out.println("POST wird gesendet...");
 
         switch (arg) {
             case hardwareBestellung1 -> sender.hardwareBestellung("1", "5");

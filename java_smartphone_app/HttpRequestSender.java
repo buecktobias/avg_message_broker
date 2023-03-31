@@ -46,6 +46,7 @@ public class HttpRequestSender {
                 "}";
 
         String hardwareOrdersUrl = "http://activemq:8161/api/message/HardwareOrders?type=queue";
+        System.out.println("Sende Hardware Bestellung !");
         RequestSender(hardwareBestellung, hardwareOrdersUrl);
     }
 
@@ -60,6 +61,7 @@ public class HttpRequestSender {
                 "}";
 
         String softwareOrdersUrl = "http://activemq:8161/api/message/SoftwareOrders?type=queue";
+        System.out.println("Sende Software Bestellung");
         RequestSender(softwareBestellung, softwareOrdersUrl);
     }
 }

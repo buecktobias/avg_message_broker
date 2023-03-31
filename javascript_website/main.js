@@ -8,7 +8,6 @@ function start(){
 }
 
 function sendPostRequest(payload, isHardware) {
-  console.log("Post wird gesendet...");
   let path;
   if (isHardware) {
     path = '/api/message/HardwareOrders?type=queue';
